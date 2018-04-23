@@ -27,7 +27,7 @@ Implementações do front-end referente portfólio individual do 6º Semestre de
 
 <h2>Aplicação de demonstração</h2>
 <ul>
-    <li>LINK: não disponivel</li>
+    <li>LINK: https://oficinachavederodas.herokuapp.com/</li>
     <li>Plataforma de hospedagem: https://www.heroku.com/</li>
 </ul>
 <br>
