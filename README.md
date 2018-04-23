@@ -27,8 +27,8 @@ Implementações do front-end referente portfólio individual do 6º Semestre de
 
 <h2>Aplicação de demonstração</h2>
 <ul>
-    <li>LINK: https://oficinachavederodas.herokuapp.com/</li>
-    <li>Plataforma de hospedagem: https://www.heroku.com/</li>
+    <li>LINK: <a href="https://oficinachavederodas.herokuapp.com/" target="_blank">https://oficinachavederodas.herokuapp.com/</a></li>
+    <li>Plataforma de hospedagem:<a href="https://www.heroku.com/" target="_blank">https://www.heroku.com/</a></li>
 </ul>
 <br>
 <h2>Observações</h2>
@@ -76,7 +76,6 @@ Implementações do front-end referente portfólio individual do 6º Semestre de
         i. Frameworks<br>
         j. Tecnologias Aplicadas<br>
         k. Ferramentas<br><br>
-
     </li>
     <li>
         <p>
@@ -85,13 +84,10 @@ Implementações do front-end referente portfólio individual do 6º Semestre de
             Estudar a teoria Business Process Reengineering (BPR) que estende o conhecer dos processos além da tecnologia
             da informação. Evitar o caos organização é um dos objetivos neste modelo que propõe obter resultados significativos
             e inovadores (PRESSMAN, 2016).<br>
-
             Alcançar sucessos em processo de desenvolvimento de software requer conhecer e estar habilitado em recursos da TI, mas
             também dominar técnicas de gestão. Você deverá pesquisar e estudar as melhores práticas de gerenciamento de projetos,
             com foco em desenvolvimento de escopo, tempo e qualidade.<br>
-
             Elaborar um plano de desenvolvimento, contemplando as técnicas de gerenciamento do escopo, do gerenciamento do tempo e do gerenciamento de qualidade.<br>
-
             • Apresentar o conceito e as vantagens em praticar o gerenciamento do escopo, inclusive o diagrama da estrutura analítica do projeto (EAP) do PROJETO Chave de Rodas.<br>
             • Desenvolver um texto que explane o objetivo da utilização da prática do gerenciamento do tempo, juntamente com a lista de atividades e do cronograma (diagrama de Gantt)
             para o PROJETO Chave de Rodas.<br>

@@ -2,7 +2,7 @@
 <html>
 <head lang="pt-br">
     <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lista de compras</title>
+    <title>Chave de Rodas</title>
 
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
     <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" media="all">
