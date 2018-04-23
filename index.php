@@ -68,7 +68,7 @@
 
         <!--Conteúdo principal inicio -->
 
-        <div class="col-md-10" id="cadastros" style="font-size: 10px">
+        <div class="col-md-10" id="cadastros" style="font-size: 14px">
             <h1 style="text-align: center; margin-top: 10px" class="page-header">SEJA BEM VINDO!</h1>
             <img class="img-responsive centro" src="img/logo_chave-de-rodas.png" alt="">
 

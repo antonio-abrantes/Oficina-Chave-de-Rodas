@@ -22,29 +22,34 @@
 
     <form method="POST" action="#" accept-charset="UTF-8"><input name="_token" type="hidden">
         <div class="row">
-            <div class="form-group col-md-6 ">
-                <label for="nome" class="control-label">Nome:</label>
-                <input class="form-control" maxlength="60" placeholder="Nome da marmita" name="nome" type="text" id="nome">
+            <div class="form-group col-md-5 ">
+                <label for="nome" class="control-label">Nome do Serviço:</label>
+                <input class="form-control" maxlength="60" placeholder="Nome do Serviço" name="nome" type="text" id="nome">
                 <div class="help-block with-errors"></div>
             </div>
 
-            <div class="form-group col-md-2 ">
-                <label for="custo" class="control-label">Custo:</label>
-                <input id="custo" class="form-control" placeholder="Custo da marmita" name="custo" type="text">
+            <div class="form-group col-md-3 ">
+                <label for="custo" class="control-label">Custo/Hora:</label>
+                <input id="custo" class="form-control" placeholder="Custo do Serviço" name="custo" type="text">
                 <div class="help-block with-errors"></div>
             </div>
 
             <div class="form-group col-md-4 ">
-                <label for="tamanho" class="control-label">Tamanho:</label>
-                <select class="form-control" id="tamanho" name="tamanho"><option value="1">Grande</option><option value="2">Média</option><option value="3">Pequena</option></select>
+                <label for="tipo" class="control-label">Tipo/Categoria:</label>
+                <select class="form-control" id="tipo" name="tipo">
+                    <option value="1">Motor</option>
+                    <option value="2">Supensão</option>
+                    <option value="3">Freios</option>
+                    <option value="3">Eletrico/Eletrônico</option>
+                </select>
                 <div class="help-block with-errors"></div>
             </div>
         </div>
 
         <div class="row">
             <div class="form-group col-md-12 ">
-                <label for="ingredientes" class="control-label">Ingredientes:</label>
-                <textarea class="form-control" placeholder="Ingredientes da marmita" name="ingredientes" cols="50" rows="10" id="ingredientes"></textarea>
+                <label for="descricao" class="control-label">Descrição do Serviço:</label>
+                <textarea class="form-control" placeholder="Descrição do serviço" name="descricao" cols="50" rows="10" id="descricao"></textarea>
                 <div class="help-block with-errors"></div>
             </div>
         </div>
