@@ -1,34 +1,8 @@
 $(function () {
 
-    /**
-     * Funções do menu lateral principal
-     * */
-
-    $("#home").on("click", function () {
+    $("#orcamento").on("click", function () {
         $.ajax({
-            url: 'cadastros/home.html',
-            type: "GET",
-            success: function (retorno) {
-                $("#cadastros").html(retorno).fadeIn(1000);
-            }
-        });
-    });
-
-
-    $("#cadastro-cliente").on("click", function () {
-        console.log("Teste");
-        $.ajax({
-            url: 'cadastros/create-cliente.html',
-            type: "GET",
-            success: function (retorno) {
-                $("#cadastros").html(retorno).fadeIn(1000);
-            }
-        });
-    });
-
-    $("#ordem-servico").on("click", function () {
-        $.ajax({
-            url: 'cadastros/create-ordem-servico.html',
+            url: 'cadastros/create-lista-servicos.php',
             type: "GET",
             success: function (retorno) {
                 $("#cadastros").html(retorno).fadeIn(1000);
@@ -41,27 +15,9 @@ $(function () {
             url: 'cadastros/create-ordem-servico.html',
             type: "GET",
             success: function (retorno) {
+                var lista = document.getElementById('tabela-lista-servicos');
                 $("#cadastros").html(retorno).fadeIn(1000);
-            }
-        });
-    });
-
-    $("#servicos").on("click", function () {
-        $.ajax({
-            url: 'cadastros/create-servicos.html',
-            type: "GET",
-            success: function (retorno) {
-                $("#cadastros").html(retorno).fadeIn(1000);
-            }
-        });
-    });
-
-    $("#orcamento").on("click", function () {
-        $.ajax({
-            url: 'cadastros/create-lista-servicos.php',
-            type: "GET",
-            success: function (retorno) {
-                $("#cadastros").html(retorno).fadeIn(1000);
+                $("#lista-servicos-gerada").html(lista);
             }
         });
     });
@@ -75,9 +31,7 @@ $(function () {
      * **/
     $('body').on("change", ".selecionar", function () {
 
-        var produto = $(this).parent().parent().parent();
-
-        console.log(produto);
+        var produto = $(this).parent().parent();
 
         var tagPreco = $(produto).find("span");
 
@@ -131,12 +85,14 @@ $(function () {
             var preco = parseFloat(precoText);
             var qtd = parseInt(qtdText);
 
-            resultado += preco * qtd;
-
-            //console.log(resultado);
+            resultado += preco;
         }
 
-        $("#total").val(resultado);
+        var teste = document.getElementById('valor-total');
+
+        console.log(teste);
+
+        //$("#valor-total").innerHTML = resultado.toString();
     }
 
 

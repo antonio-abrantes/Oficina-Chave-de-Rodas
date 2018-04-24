@@ -18,11 +18,11 @@ $tamanhos = [
     <td>
         <select name="tipo" class="selecionar"  style="border-radius: 5px 5px 5px 5px; height: 32px; margin-top: 1px">
             <option style="display: none" value="" default>Selecione</option>
-            <option value="9.90">MOTOR</option>
-            <option value="19.90">SUSPENSÃO</option>
-            <option value="29.90">FREIOS</option>
-            <option value="29.90">ELETRICO</option>
-            <option value="29.90">ELETRÔNICO</option>
+            <option value="100.00">MOTOR</option>
+            <option value="200.00">SUSPENSÃO</option>
+            <option value="300.00">FREIOS</option>
+            <option value="150.00">ELETRICO</option>
+            <option value="350.00">ELETRÔNICO</option>
         </select>
     </td>
     <td>

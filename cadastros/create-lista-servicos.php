@@ -1,7 +1,7 @@
 
 <!-- Inicio da parte dos itens -->
 <div class="row col-md-8" style="margin-top: 20px;width:920px;height: 500px; overflow: auto;padding: 0;">
-    <table class="table">
+    <table class="table" id="tabela-lista-servicos">
         <thead class="thead-inverse">
         <tr style="background: #55595c; color: white;">
             <th>CÓDIGO</th>
@@ -25,7 +25,7 @@
                 <tbody>
                 <tr class="footer pull-right">
                     <td style="width: 150px;">Total da compra</td>
-                    <td style="width: 150px; text-align: right"><div>R$ <span id="total"></span>0</div></td>
+                    <td style="width: 150px; text-align: right"><div>R$ <span id='valor-total'>0.0</span></div></td>
                 </tr>
                 </tbody>
             </table>
@@ -37,4 +37,4 @@
     </div>
 </div>
 
-<script src='js/funcoes.js' type='text/javascript'></script>
+<script src='./js/funcoes.js' type='text/javascript'></script>
