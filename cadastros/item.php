@@ -45,5 +45,3 @@ $tamanhos = [
         <button type='button' class='btn btn-danger remove' onclick='remover(this)'>REMOVER</button>
     </td>
 </tr>
-
-<?php
