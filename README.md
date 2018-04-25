@@ -10,6 +10,7 @@ Implementações do front-end referente portfólio individual do 6º Semestre de
     <li>Data: Maio de 2018</li>
     <li>Principais recursos utilizados
         <ul>
+            <li>PHP 7.1</li>
             <li>HTML 5</li>
             <li>CSS</li>
             <li>JavaScript</li>
