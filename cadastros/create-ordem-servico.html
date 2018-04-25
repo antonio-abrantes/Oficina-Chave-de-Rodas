@@ -22,19 +22,19 @@
 
     <form method="POST" action="#" accept-charset="UTF-8"><input name="_token" type="hidden">
         <div class="row">
-            <div class="form-group col-md-6 ">
+            <div class="form-group col-md-5 ">
                 <label for="nome" class="control-label">Cliente:</label>
                 <input class="form-control" maxlength="60" placeholder="Nome do cliente" name="nome" type="text" id="nome">
                 <div class="help-block with-errors"></div>
             </div>
-            <div class="form-group col-md-2 ">
-                <label for="cpf" class="control-label">CPF:</label>
-                <input id="cpf" class="form-control" placeholder="000.000.000-00" maxlength="14" name="cpf" type="text">
+            <div class="form-group col-md-4 ">
+                <label for="cpf-cnpj" class="control-label">CPF/CNPJ:</label>
+                <input id="cpf-cnpj" class="form-control" placeholder="000.000.000-00" maxlength="14" name="cpf-cnpj" type="text">
                 <div class="help-block with-errors"></div>
             </div>
-            <div class="form-group col-md-4 ">
-                <label for="telefone" class="control-label">Telefone:</label>
-                <input id="telefone" class="form-control" placeholder="(99) 9999-9999" maxlength="14" name="telefone" type="text">
+            <div class="form-group col-md-3 ">
+                <label for="placa" class="control-label">PLACA DO VEICULO:</label>
+                <input id="placa" class="form-control" placeholder="XXX-0000" maxlength="14" name="placa" type="text">
                 <div class="help-block with-errors"></div>
             </div>
         </div>
@@ -72,12 +72,12 @@
             </div>
             <div class="form-group col-md-2 ">
                 <label for="desconto" class="control-label">Desconto</label>
-                <input readonly id="desconto" class="form-control" placeholder="00%" maxlength="14" name="desconto" type="text">
+                <input readonly id="desconto" class="form-control" placeholder="0%" maxlength="14" name="desconto" type="text">
                 <div class="help-block with-errors"></div>
             </div>
 
             <div class="form-group col-md-2 ">
-                <label class="control-label">Total</label>
+                <label class="control-label">Total a pagar</label>
                 <!--<input readonly id="total-ordem" class="form-control" placeholder="00%" maxlength="14" name="total-ordem" type="text">-->
                 <div style="padding: 5px;background: #dfe6e9; border-radius: 5px 5px 5px 5px; height: 32px; margin-top: 1px">R$ <span id='total-ordem'>0.0</span></div>
                 <div class="help-block with-errors"></div>

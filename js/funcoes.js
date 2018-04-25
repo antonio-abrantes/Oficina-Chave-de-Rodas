@@ -1,8 +1,8 @@
 $(function () {
 
     $("#gerar-pagamento").on("click", function () {
-        console.log("Processando pagamento..."+$("#total-ordem").html());
-        console.log("Processando pagamento..."+$("#valor-total").html());
+        console.log("Processando pagamento..."+$("#total-ordem").html(200));
+
     });
 
     $("#orcamento").on("click", function () {
@@ -24,12 +24,28 @@ $(function () {
 
                 $("#cadastros").html(retorno).fadeIn(1000);
                 $("#lista-servicos-gerada").html(lista);
+                var teste = calcularDesconto($("#valor-total").html());
+                $("#total-ordem").html(number_format(teste, 2, '.', ','));
             }
         });
     });
 
     //Atualiza os campos para os valores iniciais
     atualizaValores();
+
+    function calcularDesconto(valor){
+        var temp = valor.replace(",", "");
+        var custo = parseFloat(temp);
+        if(custo >= 200.00 && custo <= 1000.00){
+            $("#desconto").val("5%");
+            return custo - ((custo * 5) / 100);
+        }
+        if(custo > 1000.00){
+            $("#desconto").val("10%");
+            return custo - ((custo * 10) / 100);
+        }
+        return custo;
+    }
 
     /*
      * Cada select ao ser povoado pelo PHP, o seu atributo value rece o preço do do produco que preenche o campo
