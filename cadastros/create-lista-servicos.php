@@ -5,7 +5,7 @@
         <table class="table">
             <thead class="thead-inverse">
             <tr style="background: #55595c; color: white;">
-                <th>CÓDIGO</th>
+                <th>ITEM</th>
                 <th>CATEGORIA</th>
                 <th style="width: 180px;">DESCRIÇÃO</th>
                 <th>TÉCNICO</th>
