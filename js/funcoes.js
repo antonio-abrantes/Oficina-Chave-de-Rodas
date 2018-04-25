@@ -1,8 +1,8 @@
 $(function () {
 
     $("#gerar-pagamento").on("click", function () {
-        console.log("Processando pagamento..."+$("#total-ordem").html(200));
-
+        //console.log("Processando pagamento..."+$("#total-ordem").html(200));
+        console.log("Processando pagamento...");
     });
 
     $("#orcamento").on("click", function () {
