@@ -23,13 +23,13 @@
     <form method="POST" action="#" accept-charset="UTF-8"><input name="_token" type="hidden">
         <div class="row">
             <div class="form-group col-md-6 ">
-                <label for="nome" class="control-label">Nome:</label>
+                <label for="nome" class="control-label">Cliente:</label>
                 <input class="form-control" maxlength="60" placeholder="Nome do cliente" name="nome" type="text" id="nome">
                 <div class="help-block with-errors"></div>
             </div>
             <div class="form-group col-md-2 ">
-                <label for="nascimento" class="control-label">Nascimento:</label>
-                <input id="nascimento" class="form-control" placeholder="99/99/9999" maxlength="10" name="nascimento" type="date">
+                <label for="cpf" class="control-label">CPF:</label>
+                <input id="cpf" class="form-control" placeholder="000.000.000-00" maxlength="14" name="cpf" type="text">
                 <div class="help-block with-errors"></div>
             </div>
             <div class="form-group col-md-4 ">
@@ -44,22 +44,55 @@
                 <input id="orcamento" type="button" class="btn btn-success" value="ORÇAMENTO" style="margin-top: 24px">
                 <div class="help-block with-errors"></div>
             </div>
-            <div class="form-group col-md-2 ">
-                <label for="complemento_endereco" class="control-label">Complemento:</label>
-                <input id="complemento_endereco" class="form-control" maxlength="30" placeholder="Complemento do endereço" name="complemento_endereco" type="text">
-                <div class="help-block with-errors"></div>
-            </div>
-            <div class="form-group col-md-6 ">
-                <label for="ponto_referencia" class="control-label">Ponto de refer&ecirc;ncia:</label>
-                <input id="ponto_referencia" class="form-control" maxlength="30" placeholder="Ponto de referência" name="ponto_referencia" type="text">
-                <div class="help-block with-errors"></div>
-            </div>
         </div>
 
         <div id="lista-servicos-gerada">
 
         </div>
+        <!-- Dados pagamento -->
+        <div class="row">
+            <div class="form-group col-md-3 ">
+                <label for="forma-pagamento" class="control-label">Forma de pagamento:</label>
+                <select id="forma-pagamento" name="forma-pagamento"  style="border-radius: 5px 5px 5px 5px; height: 32px; width: 100%; margin-top: 1px">
+                    <option style="display: none" value="" default>Selecione</option>
+                    <option value="">Em dinheiro</option>
+                    <option value="">Cartão de credito</option>
+                </select>
+                <div class="help-block with-errors"></div>
+            </div>
+            <div class="form-group col-md-3 ">
+                <label for="qtd-parcelas" class="control-label">Parcelas:</label>
+                <select id="qtd-parcelas" name="qtd-parcelas"  style="border-radius: 5px 5px 5px 5px; height: 32px; width: 150px; margin-top: 1px">
+                    <option style="display: none" value="" default>Selecione</option>
+                    <option value="1">1X</option>
+                    <option value="2">2X</option>
+                    <option value="3">3X</option>
+                </select>
+                <div class="help-block with-errors"></div>
+            </div>
+            <div class="form-group col-md-2 ">
+                <label for="desconto" class="control-label">Desconto</label>
+                <input readonly id="desconto" class="form-control" placeholder="00%" maxlength="14" name="desconto" type="text">
+                <div class="help-block with-errors"></div>
+            </div>
 
+            <div class="form-group col-md-2 ">
+                <label class="control-label">Total</label>
+                <!--<input readonly id="total-ordem" class="form-control" placeholder="00%" maxlength="14" name="total-ordem" type="text">-->
+                <div style="padding: 5px;background: #dfe6e9; border-radius: 5px 5px 5px 5px; height: 32px; margin-top: 1px">R$ <span id='total-ordem'>0.0</span></div>
+                <div class="help-block with-errors"></div>
+            </div>
+
+            <div class="form-group col-md-2 ">
+                <input id="gerar-pagamento" type="button" class="btn btn-success" value="PAGAR" style="margin-top: 24px">
+                <div class="help-block with-errors"></div>
+            </div>
+
+        </div>
+
+        <div id="pagamento">
+
+        </div>
 
         <hr />
         <div id="actions" class="row">

@@ -1,5 +1,10 @@
 $(function () {
 
+    $("#gerar-pagamento").on("click", function () {
+        console.log("Processando pagamento..."+$("#total-ordem").html());
+        console.log("Processando pagamento..."+$("#valor-total").html());
+    });
+
     $("#orcamento").on("click", function () {
         $.ajax({
             url: 'cadastros/create-lista-servicos.php',
@@ -16,6 +21,7 @@ $(function () {
             type: "GET",
             success: function (retorno) {
                 var lista = document.getElementById('tabela-lista-servicos');
+
                 $("#cadastros").html(retorno).fadeIn(1000);
                 $("#lista-servicos-gerada").html(lista);
             }
@@ -32,24 +38,26 @@ $(function () {
     $('body').on("change", ".selecionar", function () {
 
         var produto = $(this).parent().parent();
-
-        var tagPreco = $(produto).find("span");
-
+        var tagPreco = $(produto).find(".preco");
         var preco = parseFloat($(this).val());
 
-        //Buscar id para definir o tamanho
-        var selectContext = this;
-        var id = selectContext.options[selectContext.selectedIndex].id;
-        var tagTamanho = $(produto).find(".tamanho");
+        var subTotal = $(this).parent().parent();
+        var tagSubTotaol = subTotal.find(".subtotal");
 
-        //Passa por parametro o select de tamanho para receber a definição de acordo com o id
-        //REQ_BUSCA_TAMANHO(id, tagTamanho[0][0] );
+        //Implementar calculo do subtotal baseado no tempo decorrido...
+        tagSubTotaol.text(number_format(custoDuracaoServeico(1.32, preco), 2, '.', ','));
 
         //Atribui o valor do produto a celula "valor" da tabela
-        tagPreco.text(preco);
+        tagPreco.text(number_format(preco, 2, '.', ','));
         atualizaValores();
 
     });
+
+    function custoDuracaoServeico(duracao, custoHora){
+        var minutos = duracao * 60;
+        var custo = (minutos * custoHora) / 60;
+        return custo;
+    }
 
 
     /*
@@ -85,14 +93,10 @@ $(function () {
             var preco = parseFloat(precoText);
             var qtd = parseInt(qtdText);
 
-            resultado += preco;
+            resultado += custoDuracaoServeico(1.32, preco);
         }
 
-        var teste = document.getElementById('valor-total');
-
-        console.log(teste);
-
-        //$("#valor-total").innerHTML = resultado.toString();
+        $("#valor-total").html(number_format(resultado, 2, '.', ','));
     }
 
 
@@ -116,7 +120,6 @@ $(function () {
 
     //Função que faz a requisição do fragmento de php que será colocado na tabela...
     function REQ_AJAX_GET() {
-        console.log("Entrou");
         $.ajax(
             {
                 url: './cadastros/item.php',
@@ -131,8 +134,6 @@ $(function () {
             }
         );
     }
-
-
 
     //Função para buscar o tamanho e atribuir ao select de tamanho
     function REQ_BUSCA_TAMANHO(id, objeto) {
@@ -162,5 +163,32 @@ $(function () {
         });
     };
 
-    console.log("Iniciado... novo"); //Só pra testar o load do jQuery na pagina...
+    /*
+    * Função para formatar em formato decimal
+    * Exemplo de chamada: number_format( 5000.000000, 2, '.', ',' )
+    */
+    function number_format(number, decimals, dec_point, thousands_sep) {
+        number = (number+'').replace(',', '').replace(' ', '');
+        var n = !isFinite(+number) ? 0 : +number,
+            prec = !isFinite(+decimals) ? 0 : Math.abs(decimals),
+            sep = (typeof thousands_sep === 'undefined') ? ',' : thousands_sep,
+            dec = (typeof dec_point === 'undefined') ? '.' : dec_point,
+            s = '',
+            toFixedFix = function (n, prec) {
+                var k = Math.pow(10, prec);
+                return '' + Math.round(n * k) / k;
+            };
+        // Fix for IE parseFloat(0.55).toFixed(0) = 0;
+        s = (prec ? toFixedFix(n, prec) : '' + Math.round(n)).split('.');
+        if (s[0].length > 3) {
+            s[0] = s[0].replace(/\B(?=(?:\d{3})+(?!\d))/g, sep);
+        }
+        if ((s[1] || '').length < prec) {
+            s[1] = s[1] || '';
+            s[1] += new Array(prec - s[1].length + 1).join('0');
+        }
+        return s.join(dec);
+    }
+
+    console.log("Iniciado..."); //Só pra testar o load do jQuery na pagina...
 });
