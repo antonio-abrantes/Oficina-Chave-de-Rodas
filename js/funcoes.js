@@ -1,12 +1,28 @@
 $(function () {
 
+    /*
+    * Validações do pagamento
+    */
     $("#gerar-pagamento").on("click", function () {
         var total = calcularDesconto($("#total-ordem").html());
+
+        var formaPagamento = $("#forma-pagamento option:selected").index();
+        var qtdParcelas = $("#qtd-parcelas option:selected").index();
+
+        if(qtdParcelas === 0 || formaPagamento === 0){
+            $("#modal-pag-aviso").html("Escolha a forma de pagamento e a quantidade de parcelas!");
+            $("#confirm-pagamento").modal();
+            return;
+        }
+
         if(total > 0){
             $("#status-pagamento").css("background", "#05c46b");
             $("#status").html("PAGO");
             console.log("Processando pagamento...");
+            return;
         }
+        $("#modal-pag-aviso").html("Orçamento não realizado!");
+        $("#confirm-pagamento").modal();
     });
 
     $("#orcamento").on("click", function () {
