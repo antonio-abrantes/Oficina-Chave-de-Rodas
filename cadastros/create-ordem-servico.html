@@ -41,7 +41,7 @@
 
         <div class="row">
             <div class="form-group col-md-2 ">
-                <input id="orcamento" type="button" class="btn btn-success" value="ORÇAMENTO" style="margin-top: 24px">
+                <input id="orcamento" type="button" class="btn btn-success" value="ORÇAMENTO" style="">
                 <div class="help-block with-errors"></div>
             </div>
         </div>
@@ -51,6 +51,11 @@
         </div>
         <!-- Dados pagamento -->
         <div class="row">
+            <div class="form-group col-md-2 ">
+                <label class="control-label">Status pagamento:</label>
+                <div style="padding: 5px;background: #dfe6e9; border-radius: 5px 5px 5px 5px; height: 32px; margin-top: 1px; text-align: center"><span id='status-pagamento'>ABERTO</span></div>
+                <div class="help-block with-errors"></div>
+            </div>
             <div class="form-group col-md-3 ">
                 <label for="forma-pagamento" class="control-label">Forma de pagamento:</label>
                 <select id="forma-pagamento" name="forma-pagamento"  style="border-radius: 5px 5px 5px 5px; height: 32px; width: 100%; margin-top: 1px">
@@ -60,9 +65,9 @@
                 </select>
                 <div class="help-block with-errors"></div>
             </div>
-            <div class="form-group col-md-3 ">
+            <div class="form-group col-md-2 ">
                 <label for="qtd-parcelas" class="control-label">Parcelas:</label>
-                <select id="qtd-parcelas" name="qtd-parcelas"  style="border-radius: 5px 5px 5px 5px; height: 32px; width: 150px; margin-top: 1px">
+                <select id="qtd-parcelas" name="qtd-parcelas"  style="border-radius: 5px 5px 5px 5px; height: 32px; width: 130px; margin-top: 1px">
                     <option style="display: none" value="" default>Selecione</option>
                     <option value="1">1X</option>
                     <option value="2">2X</option>
@@ -70,14 +75,14 @@
                 </select>
                 <div class="help-block with-errors"></div>
             </div>
-            <div class="form-group col-md-2 ">
-                <label for="desconto" class="control-label">Desconto</label>
-                <input readonly id="desconto" class="form-control" placeholder="0%" maxlength="14" name="desconto" type="text">
+            <div class="form-group col-md-1 ">
+                <label for="desconto" class="control-label">Desconto:</label>
+                <input readonly id="desconto" class="form-control" placeholder="0%" name="desconto" type="text">
                 <div class="help-block with-errors"></div>
             </div>
 
             <div class="form-group col-md-2 ">
-                <label class="control-label">Total a pagar</label>
+                <label class="control-label">Total a pagar:</label>
                 <!--<input readonly id="total-ordem" class="form-control" placeholder="00%" maxlength="14" name="total-ordem" type="text">-->
                 <div style="padding: 5px;background: #dfe6e9; border-radius: 5px 5px 5px 5px; height: 32px; margin-top: 1px">R$ <span id='total-ordem'>0.0</span></div>
                 <div class="help-block with-errors"></div>
@@ -97,8 +102,8 @@
         <hr />
         <div id="actions" class="row" style="margin-bottom: 80px">
             <div class="col-md-12">
-                <input class="btn btn-primary" type="submit" value="Salvar">
-                <a href="javascript:history.back()" class="btn btn-default">Cancelar</a>
+                <input class="btn btn-primary" type="submit" value="CONFIRMAR">
+                <a href="javascript:history.back()" class="btn btn-default">CANCELAR</a>
             </div>
         </div>
     </form>

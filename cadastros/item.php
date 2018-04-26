@@ -32,7 +32,7 @@ $tamanhos = [
     </td>
     <td>
         <select name="tipo" class="tecnico"  style="border-radius: 5px 5px 5px 5px; height: 32px; width: 150px; margin-top: 1px">
-            <option style="display: none" value="" default>Selecione um funcionario</option>
+            <option style="display: none" value="" default>Funcionário</option>
             <option value="">Fulano de Tal</option>
             <option value="">Ciclano da Silva</option>
             <option value="">Jonas Malaquias</option>

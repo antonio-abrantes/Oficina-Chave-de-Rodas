@@ -1,6 +1,23 @@
+<!-- Modal -->
+<div class="modal fade" id="delete-modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Fechar"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="modalLabel">Excluir Item</h4>
+            </div>
+            <div class="modal-body">Deseja realmente excluir este item?</div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary">Sim</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">N&atilde;o</button>
+            </div>
+        </div>
+    </div>
+</div>
 
 <!-- Inicio da parte dos itens -->
-<div class="row col-md-8" style="margin-top: 20px;width:920px;height: 500px; overflow: auto;padding: 0;">
+<div class="row col-md-8" style="width:920px;height: 500px; overflow: auto;padding: 0;">
+    <h3 class="page-header">Lista de Serviços</h3>
     <div id="tabela-lista-servicos" style="font-size: 10px">
         <table class="table">
             <thead class="thead-inverse">
