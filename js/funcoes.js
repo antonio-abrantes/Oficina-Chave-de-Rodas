@@ -1,8 +1,12 @@
 $(function () {
 
     $("#gerar-pagamento").on("click", function () {
-        //console.log("Processando pagamento..."+$("#total-ordem").html(200));
-        console.log("Processando pagamento...");
+        var total = calcularDesconto($("#total-ordem").html());
+        if(total > 0){
+            $("#status-pagamento").css("background", "#05c46b");
+            $("#status").html("PAGO");
+            console.log("Processando pagamento...");
+        }
     });
 
     $("#orcamento").on("click", function () {
@@ -24,11 +28,18 @@ $(function () {
 
                 $("#cadastros").html(retorno).fadeIn(1000);
                 $("#lista-servicos-gerada").html(lista);
-                var teste = calcularDesconto($("#valor-total").html());
-                $("#total-ordem").html(number_format(teste, 2, '.', ','));
+                atualizaTotalOrdem();
             }
         });
     });
+
+    function atualizaTotalOrdem() {
+        var valorTotal = calcularDesconto($("#valor-total").html());
+        $("#total-ordem").html(number_format(valorTotal, 2, '.', ','));
+        if(parseFloat(valorTotal) < 200){
+            $("#desconto").val("0%");
+        }
+    }
 
     //Atualiza os campos para os valores iniciais
     atualizaValores();
@@ -61,7 +72,7 @@ $(function () {
         var tagSubTotaol = subTotal.find(".subtotal");
 
         //Implementar calculo do subtotal baseado no tempo decorrido...
-        tagSubTotaol.text(number_format(custoDuracaoServeico(1.32, preco), 2, '.', ','));
+        tagSubTotaol.text(number_format(custoDuracaoServico(1.32, preco), 2, '.', ','));
 
         //Atribui o valor do produto a celula "valor" da tabela
         tagPreco.text(number_format(preco, 2, '.', ','));
@@ -69,7 +80,7 @@ $(function () {
 
     });
 
-    function custoDuracaoServeico(duracao, custoHora){
+    function custoDuracaoServico(duracao, custoHora){
         var minutos = duracao * 60;
         var custo = (minutos * custoHora) / 60;
         return custo;
@@ -109,7 +120,7 @@ $(function () {
             var preco = parseFloat(precoText);
             var qtd = parseInt(qtdText);
 
-            resultado += custoDuracaoServeico(1.32, preco);
+            resultado += custoDuracaoServico(1.32, preco);
         }
 
         $("#valor-total").html(number_format(resultado, 2, '.', ','));
@@ -151,22 +162,6 @@ $(function () {
         );
     }
 
-    //Função para buscar o tamanho e atribuir ao select de tamanho
-    function REQ_BUSCA_TAMANHO(id, objeto) {
-
-        $.ajax(
-            {
-                url: './inc/busca_tamanho.php',
-                type: "GET",
-                data: {_id: id}, //Id passado por parametro do javaScrip para o php
-                dataType: 'text',
-                success: function (retorno) {
-                    objeto.innerHTML = retorno; //resposta de execução da requisição php
-                }
-            }
-        );
-    }
-
     /*
      * Função do botão remover
      * **/
@@ -176,6 +171,7 @@ $(function () {
         tr.fadeOut(400, function () {
             tr.remove();
             atualizaValores();
+            atualizaTotalOrdem();
         });
     };
 
