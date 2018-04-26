@@ -14,7 +14,13 @@ $(function () {
             url: 'cadastros/create-lista-servicos.php',
             type: "GET",
             success: function (retorno) {
-                $("#cadastros").html(retorno).fadeIn(1000);
+                var tabela;
+                if($("#lista-servicos-gerada").html().length > 15){
+                    tabela = $("#tabela-lista-servicos");
+                    $("#cadastros").html(retorno).fadeIn(1000);
+                    $("#tabela-lista-servicos").html(tabela);
+                }else
+                    $("#cadastros").html(retorno).fadeIn(1000);
             }
         });
     });
