@@ -61,8 +61,10 @@
                     <li class="active"><a id="home" href="#">Home</a></li>
                     <li><a href="#" id="cadastro-cliente">Cadastro de Clientes</a></li>
                     <li><a href="#" id="#">Cadastro de veículos</a></li>
+                    <li><a href="#" id="#">Agenda de Serviços</a></li>
+                    <li><a href="#" id="#">Orçamento</a></li>
                     <li><a href="#" id="ordem-servico">Ordens de Serviço</a></li>
-                    <li><a href="#" id="servicos">Serviços</a></li>
+                    <li><a href="#" id="servicos">Cadastro de Serviços</a></li>
                 </ul>
             </nav>
         </div>
